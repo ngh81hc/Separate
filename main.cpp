@@ -14,7 +14,7 @@
 
 #include "client_wss.hpp"
 #include "obd.hpp"
-#include"vssMapper.hpp"
+#include "vssMapper.hpp"
 #include "actuatorTest.hpp"
 #include <json.hpp>
 /* Add related libraries for using Socket CAN */
@@ -23,7 +23,7 @@
 #include <functional>
 #include <unistd.h>
 #include <net/if.h>			
-//#include "can-utils/include/linux/can.h"
+#include <linux/can.h>
 
 using namespace std;
 using namespace jsoncons;

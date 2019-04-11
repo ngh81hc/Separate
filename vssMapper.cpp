@@ -22,8 +22,8 @@
 #include <sys/socket.h>
 #include <functional>
 #include <unistd.h>
-#include <net/if.h>			
-//#include "can-utils/include/linux/can.h"
+#include <net/if.h>
+#include <linux/can.h>			
 
 using namespace std;
 using namespace jsoncons;
