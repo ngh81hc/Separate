@@ -23,7 +23,7 @@
 #include <functional>
 #include <unistd.h>
 #include <net/if.h>			
-#include "can-utils/include/linux/can.h"
+//#include "can-utils/include/linux/can.h"
 
 using namespace std;
 using namespace jsoncons;

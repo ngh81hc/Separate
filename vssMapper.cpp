@@ -23,7 +23,7 @@
 #include <functional>
 #include <unistd.h>
 #include <net/if.h>			
-#include "can-utils/include/linux/can.h"
+//#include "can-utils/include/linux/can.h"
 
 using namespace std;
 using namespace jsoncons;
@@ -60,12 +60,12 @@ json setRequest(string path) {
   return req;
 }
 
-#include "main.cpp"
 extern int s;
 /* Function for writing CAN data */
 void writeCAN(can_frame frame)
 {
    /* Declaration */
+   int nbytes;
    // int s, b, i, c, nbytes;
    // struct sockaddr_can addr;
    // struct ifreq ifr;
