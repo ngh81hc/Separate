@@ -24,6 +24,7 @@
 #include <unistd.h>
 #include <net/if.h>			
 #include <linux/can.h>
+#include <linux/can/raw.h>
 
 using namespace std;
 using namespace jsoncons;
@@ -77,9 +78,12 @@ void openSocket() {
    else{
       cout << "[Info] Interface name: " << ifr.ifr_name << endl;
    }
+   memset(&addr, 0, sizeof(addr));
    addr.can_family = AF_CAN;
    addr.can_ifindex = ifr.ifr_ifindex;
-
+   
+   setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, NULL, 0);
+   
    /* Bind socket to CAN interfaces */
    b = bind(s, (struct sockaddr *)&addr, sizeof(addr));
    if(b == -1) {

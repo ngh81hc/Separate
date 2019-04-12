@@ -159,6 +159,9 @@ string setRPM() {
   }
 
   cout << "[Info] OBD Message of Engine speed: " << readBuf << endl;
+  
+  cout << "[Info] Token data: " << stoi (string(tokens[0]),nullptr,16) << " " << stoi (string(tokens[1]),nullptr,16) << " " << stoi (string(tokens[2]),nullptr,16) << " " << stoi (string(tokens[3]),nullptr,16) << endl;
+  
   /* Write CAN data */
   can_frame myCANframe;
   myCANframe.can_id = 0x3D9;
@@ -222,6 +225,7 @@ string setVehicleSpeed() {
   }
 
   cout << "[Info] OBD Message of Vehicle speed: " << readBuf << endl;
+  cout << "[Info] Token data: " << stoi (string(tokens[0]),nullptr,16) << " " << stoi (string(tokens[1]),nullptr,16) << " " << stoi (string(tokens[2]),nullptr,16) << endl;
   /* Write CAN data */
   can_frame myCANframe;
   myCANframe.can_id = 0x3E9;
@@ -284,6 +288,7 @@ string setFuelLevel() {
   }
   
   cout << "[Info] OBD Message of Fuel level: " << readBuf << endl;
+  cout << "[Info] Token data: " << stoi (string(tokens[0]),nullptr,16) << " " << stoi (string(tokens[1]),nullptr,16) << " " << stoi (string(tokens[2]),nullptr,16) << endl;
   /* Write CAN data */
   can_frame myCANframe;
   myCANframe.can_id = 0x3D9;
